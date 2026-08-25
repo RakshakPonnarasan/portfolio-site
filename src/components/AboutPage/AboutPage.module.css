@@ -1,0 +1,467 @@
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.main {
+  width: 100%;
+  background: var(--bg);
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.pageHeader {
+  padding: var(--space-8) 44px var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.breadcrumbLink,
+.breadcrumbCurrent,
+.breadcrumbSep {
+  font-family: var(--font-ui);
+  font-size: var(--type-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.breadcrumbLink {
+  color: var(--text-dim);
+  transition: color var(--t-fast);
+}
+
+.breadcrumbLink:hover {
+  color: var(--text-primary);
+}
+
+.breadcrumbSep {
+  color: var(--text-dim);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-muted);
+}
+
+.pageTitle {
+  margin: 0;
+
+  font-family: var(--font-ui);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   MAIN ABOUT GRID
+   ========================================================= */
+
+.aboutGrid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(360px, 0.95fr);
+
+  min-height: calc(100vh - 130px);
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   CENTER / PROFILE COLUMN
+   ========================================================= */
+
+.profileColumn {
+  padding: var(--space-8) 44px 50px;
+
+  border-right: 1px solid var(--border);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+   ========================================================= */
+
+.imageFrame {
+  width: 100%;
+
+  aspect-ratio: 4 / 4.4;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--bg-raised);
+}
+
+.profileImage {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: saturate(0.92);
+
+  transition:
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 500ms ease;
+}
+
+.imageFrame:hover .profileImage {
+  transform: scale(1.015);
+  filter: saturate(1);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.introduction {
+  padding: var(--space-6) 0 var(--space-2);
+
+  max-width: 650px;
+}
+
+.introTitle {
+  margin: 0 0 var(--space-4);
+
+  font-family: var(--font-ui);
+  font-size: var(--type-title);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  color: var(--text-primary);
+}
+
+.introduction p {
+  margin: 0 0 var(--space-4);
+
+  font-family: var(--font-ui);
+  font-size: var(--type-body);
+  line-height: 1.7;
+
+  color: var(--text-second);
+}
+
+.introduction p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CURRENT FOCUS
+   ========================================================= */
+
+.focusBox {
+  margin-top: var(--space-6);
+
+  padding: var(--space-4) 0;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.focusLabel {
+  display: block;
+
+  margin-bottom: var(--space-2);
+
+  font-family: var(--font-ui);
+  font-size: var(--type-meta);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+
+  color: var(--text-dim);
+}
+
+.focusText {
+  margin: 0;
+
+  font-family: var(--font-ui);
+  font-size: var(--type-nav);
+  line-height: 1.5;
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   RIGHT INFORMATION COLUMN
+   ========================================================= */
+
+.infoColumn {
+  padding: var(--space-8) var(--space-6) 50px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-3);
+}
+
+
+/* =========================================================
+   INFORMATION CARDS
+   ========================================================= */
+
+.infoCard {
+  padding: var(--space-5);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--bg);
+
+  transition:
+    border-color var(--t-fast),
+    background var(--t-fast);
+}
+
+.infoCard:hover {
+  border-color: var(--border-mid);
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.cardTitle {
+  margin: 0 0 var(--space-5);
+
+  font-family: var(--font-ui);
+  font-size: var(--type-body);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   EDUCATION
+   ========================================================= */
+
+.educationItem {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-2);
+}
+
+.meta {
+  font-family: var(--font-ui);
+  font-size: var(--type-label);
+  letter-spacing: 0.04em;
+
+  color: var(--text-muted);
+}
+
+.educationItem strong {
+  font-family: var(--font-ui);
+  font-size: var(--type-nav);
+  font-weight: 600;
+  line-height: 1.45;
+
+  color: var(--text-primary);
+}
+
+.secondary {
+  font-family: var(--font-ui);
+  font-size: var(--type-body);
+  line-height: 1.5;
+
+  color: var(--text-second);
+}
+
+
+/* =========================================================
+   SKILLS / TOOLS
+   ========================================================= */
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: var(--space-2);
+}
+
+.skillsGrid span {
+  padding: var(--space-2) var(--space-3);
+
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-sm);
+
+  font-family: var(--font-ui);
+  font-size: var(--type-label);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--text-second);
+
+  transition:
+    color var(--t-fast),
+    border-color var(--t-fast);
+}
+
+.skillsGrid span:hover {
+  color: var(--text-primary);
+  border-color: var(--text-dim);
+}
+
+.toolNote {
+  margin: var(--space-4) 0 0;
+
+  font-family: var(--font-ui);
+  font-size: var(--type-body);
+  line-height: 1.65;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-2);
+
+  padding: var(--space-3) 0;
+
+  border-top: 1px solid var(--border);
+
+  font-family: var(--font-ui);
+  font-size: var(--type-body);
+
+  color: var(--text-second);
+
+  transition:
+    color var(--t-fast),
+    padding-left var(--t-fast);
+}
+
+.contactLink:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.contactLink:hover {
+  color: var(--text-primary);
+  padding-left: var(--space-1);
+}
+
+
+/* =========================================================
+   OPEN TO
+   ========================================================= */
+
+.openText {
+  margin: 0;
+
+  font-family: var(--font-ui);
+  font-size: var(--type-body);
+  line-height: 1.7;
+
+  color: var(--text-second);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileColumn {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .imageFrame {
+    max-width: 700px;
+  }
+
+  .infoColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .infoCard:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .pageHeader {
+    padding: var(--space-6) var(--space-5) var(--space-5);
+  }
+
+  .pageTitle {
+    font-size: 24px;
+  }
+
+  .profileColumn {
+    padding: var(--space-6) var(--space-5) var(--space-8);
+  }
+
+  .infoColumn {
+    padding: var(--space-5);
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imageFrame {
+    aspect-ratio: 1 / 1.05;
+  }
+
+  .introduction {
+    padding-top: var(--space-6);
+  }
+
+  .introduction p {
+    font-size: var(--type-label);
+    line-height: 1.7;
+  }
+
+  .infoCard {
+    padding: var(--space-4);
+  }
+}

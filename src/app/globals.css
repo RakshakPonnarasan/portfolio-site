@@ -1,26 +1,266 @@
 @import "tailwindcss";
 
+/* =========================================================
+   ROOT — DARK THEME
+   ========================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* =======================================================
+     CORE COLOR SYSTEM
+     ======================================================= */
+
+  --bg: #111111;
+  --bg-raised: #171717;
+  --bg-subtle: #1d1d1d;
+
+  --text-primary: #f5f5f2;
+  --text-second: #a9a9a4;
+  --text-muted: #7d7d78;
+  --text-dim: #555550;
+
+  --border: rgba(255, 255, 255, 0.10);
+  --border-mid: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.20);
+
+  --accent: #4f7cff;
+
+  /* =======================================================
+     TYPE
+     ======================================================= */
+
+  --font-ui: var(--font-mono), "IBM Plex Mono", monospace;
+
+  --type-meta: 8px;
+  --type-label: 10px;
+  --type-body: 11px;
+  --type-nav: 12px;
+  --type-title: 16px;
+  --type-display-sm: 32px;
+
+  /* =======================================================
+     SPACING
+     ======================================================= */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* =======================================================
+     LAYOUT
+     ======================================================= */
+
+  --sidebar-width: 375px;
+
+  /* =======================================================
+     RADII
+     ======================================================= */
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  /* =======================================================
+     MOTION
+     ======================================================= */
+
+  --t-fast: 160ms;
+  --t-base: 240ms;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+[data-theme="light"] {
+  --bg: #f4f4f0;
+  --bg-raised: #ecece7;
+  --bg-subtle: #e4e4de;
+
+  --text-primary: #151515;
+  --text-second: #555550;
+  --text-muted: #85857e;
+  --text-dim: #aaa9a2;
+
+  --border: rgba(0, 0, 0, 0.10);
+  --border-mid: rgba(0, 0, 0, 0.14);
+  --border-strong: rgba(0, 0, 0, 0.20);
 }
 
-@media (prefers-color-scheme: dark) {
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  background: var(--bg);
+  color: var(--text-primary);
+
+  font-family: var(--font-ui);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+
+  transition:
+    background var(--t-base) ease,
+    color var(--t-base) ease;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+button {
+  color: inherit;
+}
+
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+  background: var(--text-primary);
+  color: var(--bg);
+}
+
+
+/* =========================================================
+   GLOBAL LAYOUT
+   ========================================================= */
+
+.layout-shell {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+.layout-main {
+  min-width: 0;
+  min-height: 100vh;
+
+  margin-left: var(--sidebar-width);
+
+  background: var(--bg);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) and (min-width: 801px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --sidebar-width: 320px;
+  }
+
+  .layout-main {
+    margin-left: var(--sidebar-width);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+
+  .layout-main {
+    margin-left: 0;
+
+    /*
+      Sidebar becomes the fixed mobile header.
+      Keep page content below it.
+    */
+    padding-top: 56px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+  }
 }

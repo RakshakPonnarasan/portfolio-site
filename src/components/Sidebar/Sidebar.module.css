@@ -1,0 +1,649 @@
+.sidebar {
+  position: fixed;
+
+  inset: 0 auto 0 0;
+
+  width: var(--sidebar-width);
+
+  z-index: 40;
+
+  background: var(--bg);
+
+  border-right: 1px solid var(--border);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   INNER
+   ========================================================= */
+
+.inner {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 14px var(--space-3) var(--space-4);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+
+/* =========================================================
+   SIDEBAR SCROLLBAR
+   ========================================================= */
+
+.inner::-webkit-scrollbar {
+  width: 6px;
+}
+
+.inner::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.inner::-webkit-scrollbar-thumb {
+  background: var(--border);
+
+  border-radius: 999px;
+}
+
+.inner::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+
+/* =========================================================
+   IDENTITY
+   ========================================================= */
+
+.identity {
+  display: block;
+
+  width: fit-content;
+
+  color: var(--text-primary);
+
+  text-decoration: none;
+}
+
+
+.name {
+  display: block;
+
+  font-family: var(--font-ui);
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: 0.02em;
+}
+
+
+.role {
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--text-muted);
+
+  font-family: var(--font-ui);
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.10em;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro {
+  width: 100%;
+
+  max-width: 300px;
+
+  margin: 38px 0 28px;
+
+  color: var(--text-second);
+
+  font-family: var(--font-ui);
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.45;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   MAIN NAV
+   ========================================================= */
+
+.nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   NAV ITEM
+   ========================================================= */
+
+.navItem {
+  width: 100%;
+
+  min-height: 80px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 10px 14px;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  background: transparent;
+
+  color: var(--text-second);
+
+  text-decoration: none;
+
+  transition:
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+
+.navItem:hover {
+  border-color: var(--text-primary);
+
+  color: var(--text-second);
+}
+
+
+.navItem.active {
+  border-color: var(--text-primary);
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   NAV ICON
+   ========================================================= */
+
+.navIcon {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: var(--bg-raised);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-sm);
+
+  color: inherit;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   NAV ICON IMAGE
+   ========================================================= */
+
+.navIconImage {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: var(--radius-sm);
+}
+
+
+/* =========================================================
+   EXISTING SVG ICON
+   ========================================================= */
+
+.iconSvg {
+  width: 34px;
+  height: 34px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   NAV TEXT
+   ========================================================= */
+
+.navText {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.navLabel {
+  display: block;
+
+  font-family: var(--font-ui);
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: 0.02em;
+}
+
+
+.navNote {
+  display: block;
+
+  color: var(--text-muted);
+
+  font-family: var(--font-ui);
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   CASE STUDIES
+   ========================================================= */
+
+.projects {
+  width: 100%;
+
+  margin-top: 34px;
+}
+
+
+.projectsLabel {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--text-muted);
+
+  font-family: var(--font-ui);
+
+  font-size: 9px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+}
+
+
+.projectList {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   CASE STUDY CARD
+   ========================================================= */
+
+.projectLink {
+  width: 100%;
+
+  min-height: 68px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  background: transparent;
+
+  color: var(--text-second);
+
+  text-decoration: none;
+
+  transition:
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+
+.projectLink:hover {
+  border-color: var(--text-primary);
+
+  color: var(--text-primary);
+}
+
+
+.projectActive {
+  border-color: var(--text-primary);
+
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   CASE STUDY THUMBNAIL
+   IMPORTANT:
+   There should be ONLY ONE of these in Sidebar.tsx.
+   ========================================================= */
+
+.projectThumb {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: block;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-sm);
+}
+
+
+.projectThumbImage {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   CASE STUDY TEXT
+   ========================================================= */
+
+.projectMeta {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.projectName {
+  display: block;
+
+  color: inherit;
+
+  font-family: var(--font-ui);
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  letter-spacing: 0.02em;
+}
+
+
+.projectDescription {
+  display: block;
+
+  color: var(--text-muted);
+
+  font-family: var(--font-ui);
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+   ========================================================= */
+
+.projectNumber {
+  display: none;
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+   ========================================================= */
+
+.bottom {
+  margin-top: auto;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+.theme {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  font-family: var(--font-ui);
+
+  font-size: var(--type-label);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+}
+
+
+.themeSlash {
+  color: var(--text-dim);
+}
+
+
+.themeActive {
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+.mobileBar {
+  display: none;
+}
+
+
+@media (max-width: 1100px) and (min-width: 801px) {
+  .inner {
+    padding-left: var(--space-3);
+
+    padding-right: 12px;
+  }
+
+  .navNote {
+    font-size: 11px;
+  }
+
+  .projectDescription {
+    font-size: 11px;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
+
+  .mobileBar {
+    position: fixed;
+
+    inset: 0 0 auto;
+
+    z-index: 50;
+
+    height: 56px;
+
+    padding: 0 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: var(--bg);
+
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobileName {
+    color: var(--text-primary);
+
+    text-decoration: none;
+
+    font-family: var(--font-ui);
+
+    font-size: var(--type-label);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: 0.04em;
+  }
+
+  .mobileActions {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-4);
+  }
+
+  .mobileTheme,
+  .mobileMenuLink {
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--text-muted);
+
+    text-decoration: none;
+
+    font-family: var(--font-ui);
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+
+    transition:
+      color 160ms ease;
+  }
+
+  .mobileTheme:hover,
+  .mobileMenuLink:hover {
+    color: var(--text-primary);
+  }
+}
