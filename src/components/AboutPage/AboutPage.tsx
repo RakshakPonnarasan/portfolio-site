@@ -221,6 +221,18 @@ export default function AboutPage() {
                 </span>
               </a>
 
+              <a
+  href="https://www.behance.net/rakshakmp"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={styles.contactLink}
+>
+  <span>↳</span>
+  <span>
+    behance.net/rakshakmp
+  </span>
+</a>
+
               <button
   type="button"
   className={styles.contactLink}

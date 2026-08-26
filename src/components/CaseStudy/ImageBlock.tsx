@@ -66,16 +66,18 @@ export default function ImageBlock({
         </div>
 
         <Image
-          src={src}
-          alt={alt}
-          className={styles.image}
-          fill
-          sizes="(max-width: 768px) 100vw, calc(100vw - 358px)"
-          loading="lazy"
-          onError={(event) => {
-            event.currentTarget.style.display = "none";
-          }}
-        />
+  src={src}
+  alt={alt}
+  className={styles.image}
+  fill
+  sizes="(max-width: 768px) 100vw, calc(100vw - 375px)"
+  quality={75}
+  loading="lazy"
+  decoding="async"
+  onError={(event) => {
+    event.currentTarget.style.display = "none";
+  }}
+/>
       </div>
 
       {caption && (

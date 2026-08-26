@@ -6,6 +6,8 @@ import "./globals.css";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import Footer from "@/components/Footer/Footer";
 import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
+import PageLoader from "@/components/PageLoader/PageLoader";
+import PageTransition from "@/components/PageTransition/PageTransition";
 
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -46,13 +48,16 @@ export default function RootLayout({
     >
       <body className={ibmPlexMono.variable}>
         <ThemeProvider>
+          <PageLoader />
 
           <div className="layout-shell">
 
             <Sidebar />
 
             <main className="layout-main">
-              {children}
+              <PageTransition>
+                {children}
+              </PageTransition>
 
               <Footer />
             </main>
